@@ -1,4 +1,4 @@
-*Laravel* PHP framework test.
+*Laravel* PHP framework experiments.
 
 Main tools:
 - PHP
