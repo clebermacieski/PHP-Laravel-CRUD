@@ -37,6 +37,10 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => ['required', 'max:100','min:3']
+        ]);
+
         $client = new Client;
 
         if ($request->hasFile('photo')) {
@@ -111,7 +115,7 @@ class ClientController extends Controller
     {
         $client = Client::findOrFail($id);
 
-        if ( $client->delete() ){
+        if ($client->delete()) {
             return redirect()->route('clients.index');
         }
     }
